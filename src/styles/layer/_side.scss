@@ -1,0 +1,92 @@
+.menu {
+  background-color: rgba(color(primary), 0.2);
+  width: 50%;
+  max-width: 200px;
+  padding: 1rem;
+  margin-top: 1rem;
+  @include dflex;
+  flex-direction: column;
+  &-header {
+    @include dflex(space-between);
+    @include heading(1.4rem);
+  }
+  &-list {
+    @include dflex;
+    gap: 1rem;
+    flex-direction: column;
+    width: 100%;
+    &-item {
+      background-color: rgba(color(dark), 0.2);
+      padding: 0.6rem;
+      border-radius: 10px;
+      @include dflex(space-around);
+      gap: 0.5rem;
+      width: 100%;
+      max-height: 6rem;
+      &-remove {
+        width: 100%;
+        max-width: 2rem;
+        max-height: 3rem;
+        background-image: url(../../../public/imges/remove.png);
+        background-size: 100% 100%;
+        background-color: transparent;
+        border: transparent;
+        cursor: pointer;
+      }
+      &-qtys {
+        @include dflex;
+        background-color: rgba(color(light), 0.2);
+        padding: 0.2rem;
+        border-radius: 5px;
+        gap: 1rem;
+        .qty-minus {
+          &::before {
+            font-family: "FontAwesome";
+            content: "\f068";
+            color: red;
+            cursor: pointer;
+            font-size: 2rem;
+          }
+        }
+        input {
+          color: color(light-text);
+          font-size: 1.8rem;
+          text-align: center;
+          background-color: transparent;
+          border: transparent;
+          width: 70%;
+          height: 2rem;
+          max-width: 2rem;
+          margin-bottom: 0.5rem;
+        }
+        .qty-plus {
+          &::before {
+            font-family: "FontAwesome";
+            content: "\2b";
+            color: green;
+            cursor: pointer;
+            font-size: 2rem;
+          }
+        }
+      }
+      img {
+        max-width: 4.5rem;
+        width: 30%;
+      }
+    }
+  }
+  &-clear {
+    text-transform: capitalize;
+    font-family: roboto;
+    font-size: 2rem;
+    color: rgba(color(dark), 0.6);
+    font-weight: 600;
+    margin-top: 1rem;
+    width: 100%;
+    height: 4rem;
+    border: transparent;
+    background-color: rgba(color(danger), 0.7);
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}

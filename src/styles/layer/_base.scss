@@ -1,0 +1,44 @@
+html {
+  font-size: 62.5%;
+  @include responsive(lg) {
+    font-size: 58%;
+  }
+  @include responsive(md) {
+    font-size: 55%;
+  }
+  @include responsive(sm) {
+    font-size: 50%;
+  }
+  @include responsive(xs) {
+    font-size: 48%;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+  height: 100%;
+}
+.countainer {
+  font-family: "Roboto";
+  text-transform: capitalize;
+  width: 100%;
+  height: 100vh;
+  @include responsive(md) {
+    height: auto;
+  }
+}
+.body-container {
+  @include dflex(center, flex-start);
+  // height: 80vh;
+}
+//////////////////////////////////////////

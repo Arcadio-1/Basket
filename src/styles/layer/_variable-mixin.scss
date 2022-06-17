@@ -1,0 +1,96 @@
+@font-face {
+  font-family: "Roboto";
+  // src: url(../../../public/fonts/roboto/Roboto-Thin.ttf) format("ttf");
+  src: url(../../../public/fonts/roboto/Roboto-Thin.ttf) format("ttf");
+  font-style: normal;
+  font-weight: 200;
+}
+@font-face {
+  font-family: "Roboto-black";
+  src: url(../../../public/fonts/roboto/Roboto-Black.ttf) format("ttf");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url(../../../public/fonts/roboto/Roboto-Regular.ttf) format("ttf");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url(../../../public/fonts/roboto/Roboto-Bold.ttf) format("ttf");
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: BeauRivage;
+  src: url(../../../public/fonts/BeauRivage-Regular.ttf);
+}
+@mixin responsive($brekPoint) {
+  @if ($brekPoint==xl) {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+  @if ($brekPoint==lg) {
+    @media (max-width: 1000px) {
+      @content;
+    }
+  }
+  @if ($brekPoint==md) {
+    @media (max-width: 900px) {
+      @content;
+    }
+  }
+  @if ($brekPoint==sm) {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+  @if ($brekPoint==xs) {
+    @media (max-width: 400px) {
+      @content;
+    }
+  }
+}
+$colors: (
+  primary: #74007c,
+  secondary: #5100ae,
+  thirtiory: #333,
+  light-text: #fffafa,
+  danger: #ff6347,
+  dark: #000,
+  light: #fff,
+);
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+@mixin dflex($just: center, $alin: center) {
+  display: flex;
+  align-items: $alin;
+  justify-content: $just;
+}
+@mixin heading($fontSize: 1rem) {
+  font-size: $fontSize;
+  padding: 0.5rem;
+  color: rgba(color(light), 0.8);
+  font-weight: 600;
+  font-family: roboto;
+  width: 100%;
+  border-bottom: 3px solid color(light);
+  margin-bottom: 1rem;
+}
+
+$sizes: (
+  xl: 5rm,
+  lg: 4rm,
+  md: 3rm,
+  sm: 2rm,
+  xs: 1rm,
+);
+
+@function size($rm) {
+  @return map-get($sizes, $rm);
+}
