@@ -17,20 +17,29 @@ function App() {
 
   const addToBasketHandler = (product) => {
     if (basket.length > 0) {
-      setbasket((prevItems) => {
-        basket.map((item) => {
-          if (item.id === product.id) {
-            item.number++;
-            return [...prevItems];
-          } else {
-            return [...prevItems, product];
-          }
-        });
+      let bool = false;
+      const list = basket.map((item) => {
+        if (item.id === product.id) {
+          item.number = item.number + 1;
+          // console.log(item);
+          bool = true;
+        }
+        return item;
       });
+      if (bool) {
+        console.log(list);
+        return setbasket(list);
+      }
+      if (!bool) {
+        return setbasket((prev) => {
+          return [...prev, { ...product, number: 1 }];
+        });
+      }
+      return;
     }
     setbasket((prevItems) => {
-      console.log(basket);
-      return [...prevItems, product];
+      console.log("3");
+      return [...prevItems, { ...product, number: 1 }];
     });
   };
   return (

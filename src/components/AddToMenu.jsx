@@ -8,7 +8,7 @@ const AddToMenu = (props) => {
               <input type="button" value="" className="menu-list-item-remove" />
               <div className="menu-list-item-qtys">
                 <div className="qty-minus"></div>
-                <input type="text" name="" id="" defaultValue="0" />
+                <input type="text" name="" id="" Value={item.number} />
                 <div className="qty-plus"></div>
               </div>
               <img src={item.img} alt="" />
